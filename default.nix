@@ -7,4 +7,5 @@ in stdenv.mkDerivation {
   name = "bellows2mqtt";
   propagatedBuildInputs = map pythonPackage
     (lib.splitString "\n" (builtins.readFile ./requirements.txt));
+  nativeBuildInputs = with python3Packages; [ pylint ];
 }
